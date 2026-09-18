@@ -67,19 +67,19 @@ function Contact() {
               </div>
             )}
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Full Name" error={errors.name}>
+              <Field label="Full Name" error={errors["name"]}>
                 <Input value={values.name} onChange={set("name")} placeholder="Tanaka Moyo" />
               </Field>
-              <Field label="Email" error={errors.email}>
+              <Field label="Email" error={errors["email"]}>
                 <Input type="email" value={values.email} onChange={set("email")} placeholder="you@email.com" />
               </Field>
               <div className="sm:col-span-2">
-                <Field label="Phone Number" error={errors.phone}>
+                <Field label="Phone Number" error={errors["phone"]}>
                   <Input value={values.phone} onChange={set("phone")} placeholder="+263 77 000 0000" />
                 </Field>
               </div>
               <div className="sm:col-span-2">
-                <Field label="Message" error={errors.message}>
+                <Field label="Message" error={errors["message"]}>
                   <Textarea rows={5} value={values.message} onChange={set("message")} placeholder="How can we help?" />
                 </Field>
               </div>
@@ -107,7 +107,7 @@ function Contact() {
   );
 }
 
-function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
+function Field({ label, error, children }: { label: string; error?: string | undefined; children: React.ReactNode }) {
   return (
     <div className="space-y-2">
       <Label>{label}</Label>
