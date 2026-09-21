@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { cloneElement, isValidElement, useId, useState } from "react";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Check, CheckCircle2, ArrowLeft, ArrowRight, ShieldCheck, Pencil } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
@@ -430,10 +430,13 @@ function Field({
   error?: string | undefined;
   children: React.ReactNode;
 }) {
+  const id = useId();
   return (
     <div className="space-y-2">
-      <Label>{label}</Label>
-      {children}
+      <Label htmlFor={id}>{label}</Label>
+      {isValidElement(children)
+        ? cloneElement(children as React.ReactElement<{ id?: string }>, { id })
+        : children}
       {error && <p className="text-xs font-medium text-destructive">{error}</p>}
     </div>
   );
