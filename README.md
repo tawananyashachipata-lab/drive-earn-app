@@ -1,502 +1,113 @@
 # Drive & Earn App
 
-Build a modern, responsive TakeOFF-inspired transportation and delivery website focused on driver onboarding.
+#  African Unicorn TakeOFF — Driver Onboarding System
 
-Goal
+## About the Project
 
-Create a polished website where people can:
+African Unicorn TakeOFF is a driver onboarding web application designed to simplify and streamline the process of registering drivers onto a transport platform.
 
-Learn what TakeOFF is.
+The system provides a digital onboarding experience where drivers can submit their information and required details, helping make the registration process more organized and efficient.
 
-Choose between becoming a Driver or using TakeOFF as a Customer.
+The project uses modern web technologies and Supabase to support data management and backend functionality. It also integrates eSMS Africa to support SMS notifications.
 
-Complete a simple Driver Onboarding process.
+##  Key Features
 
-See the benefits and requirements of becoming a TakeOFF driver.
+- **Driver Registration:** Collects driver information through an online onboarding process.
+- **Form Validation:** Helps ensure that submitted information meets the required input rules.
+- **Database Integration:** Uses Supabase to manage and store application data.
+- **SMS Notifications:** Integrates with eSMS Africa to support sending SMS messages through a Supabase Edge Function.
+- **Responsive Interface:** Designed to provide a user-friendly experience across different screen sizes.
 
-The design should feel like a real African mobility/delivery startup: modern, trustworthy, simple, youthful, and professional.
+##  Technologies Used
 
-Tech Stack
+- **React** — Building the user interface.
+- **Vite** — Frontend development server and build tool.
+- **TypeScript** — Type-safe JavaScript development.
+- **Supabase** — Backend services and database integration.
+- **Supabase Edge Functions** — Server-side functionality for SMS integration.
+- **eSMS Africa** — SMS messaging service.
+- **Git & GitHub** — Version control and project collaboration.
 
-React
+##  Getting Started
 
-TypeScript
+### Prerequisites
 
-Vite
+Ensure you have the following installed:
 
-Tailwind CSS
+- Node.js
+- npm
+- Git
 
-React Router
+### Installation
 
-Use reusable components
+1. Clone the repository:
 
-Use clean, maintainable code
+   ```bash
+   git clone YOUR_REPOSITORY_URL
+   ```
 
-Make the website fully responsive for desktop, tablet, and mobile.
+2. Navigate to the project directory:
 
-Brand / Visual Style
+   ```bash
+   cd take-off-driver-onboarding
+   ```
 
-Use a clean modern design inspired by transportation and delivery apps.
+3. Install dependencies:
 
-Colors:
+   ```bash
+   npm install
+   ```
 
-Primary: deep/dark blue
+4. Create a `.env` file in the project root and configure your Supabase credentials:
 
-Secondary: bright green
+   ```env
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-White backgrounds
+5. Start the development server:
 
-Dark text
+   ```bash
+   npm run dev
+   ```
 
-Light gray sections
+6. Open the local URL displayed in your terminal.
 
-Use green for success states and completed onboarding steps.
+## 🔐 Environment Variables
 
-Use rounded cards, subtle shadows, clear buttons, clean typography, and modern spacing.
+The application uses environment variables to configure its connection to Supabase.
 
-Do NOT make the interface overly complicated.
+| Variable | Description |
+|---|---|
+| `VITE_SUPABASE_URL` | Your Supabase project URL |
+| `VITE_SUPABASE_ANON_KEY` | Your Supabase publishable/anonymous key |
 
-PAGE 1 — HOME
+**Security note:** Never commit real secrets, service-role keys, or SMS API credentials to GitHub. Keep sensitive credentials in secure environment settings or Supabase Edge Function secrets.
 
-Create a homepage with:
+##  Project Objectives
 
-Navbar
+- Digitize the driver registration process.
+- Improve the organization of driver onboarding information.
+- Provide a simple and accessible registration experience.
+- Integrate backend services and SMS functionality.
+- Apply modern frontend and backend development practices to a practical project.
 
-Logo:
-TakeOFF
+##  Future Improvements
 
-Navigation:
+- Add driver onboarding progress tracking.
+- Improve registration feedback and error handling.
+- Expand document verification capabilities.
+- Add an administrative dashboard for reviewing applications.
+- Enhance SMS notifications and delivery status tracking.
 
-Home
+##  Developer
 
-How It Works
+**Tawananyasha Chipata**
 
-Drivers
+Software Development Student | Aspiring Software Developer
 
-About
+Interested in frontend and backend development, building practical applications, and learning modern software technologies.
 
-Contact
+---
 
-Buttons:
-
-Sign In
-
-Become a Driver
-
-On mobile, use a hamburger menu.
-
-Hero Section
-
-Headline:
-
-Move. Deliver. Earn with TakeOFF.
-
-Supporting text:
-
-Join TakeOFF and connect with customers who need reliable rides and deliveries.
-
-Primary button:
-Become a Driver
-
-Secondary button:
-Explore TakeOFF
-
-Include a modern hero image/illustration showing a driver using a vehicle or making a delivery.
-
-How TakeOFF Works
-
-Create 3 simple cards:
-
-Sign Up
-Create your TakeOFF driver account.
-
-Get Verified
-Submit your required information and documents.
-
-Start Earning
-Once approved, start accepting rides and deliveries.
-
-Why Drive With TakeOFF?
-
-Create 4 cards:
-
-Flexible working hours
-
-Earn from rides and deliveries
-
-Easy-to-use driver platform
-
-Grow your income
-
-Driver CTA
-
-Large section:
-
-Ready to start earning?
-
-Text:
-Join TakeOFF as a driver and become part of a growing mobility and delivery community.
-
-Button:
-Start Driver Registration
-
-Footer
-
-Include:
-
-TakeOFF logo
-
-About
-
-Drivers
-
-Contact
-
-Terms & Conditions
-
-Privacy Policy
-
-Social media icons
-
-Copyright
-
-PAGE 2 — DRIVER ONBOARDING
-
-Create a dedicated multi-step driver registration flow.
-
-At the top show:
-
-Become a TakeOFF Driver
-
-Progress indicator:
-
-Step 1 — Personal Information
-Step 2 — Vehicle Information
-Step 3 — Documents
-Step 4 — Review
-Step 5 — Submitted
-
-Use a clean card-based form.
-
-STEP 1 — PERSONAL INFORMATION
-
-Fields:
-
-First Name
-
-Last Name
-
-Phone Number
-
-Email Address
-
-Date of Birth
-
-Residential Address
-
-Dropdown:
-City
-
-Options:
-
-Harare
-
-Bulawayo
-
-Mutare
-
-Gweru
-
-Other
-
-Button:
-Continue
-
-Validate required fields.
-
-STEP 2 — VEHICLE INFORMATION
-
-Title:
-
-Tell us about your vehicle
-
-Fields:
-
-Vehicle Type
-
-Car
-
-Motorcycle
-
-Van
-
-Truck
-
-Vehicle Make
-
-Vehicle Model
-
-Vehicle Year
-
-Registration Number
-
-Vehicle Color
-
-Checkbox:
-
-I confirm that I am legally allowed to operate this vehicle.
-
-Buttons:
-Back
-Continue
-
-STEP 3 — DOCUMENTS
-
-Title:
-
-Upload your documents
-
-Create upload cards for:
-
-Driver's Licence
-
-National ID
-
-Vehicle Registration
-
-Vehicle Insurance
-
-Each upload component should show:
-
-Upload button
-
-File name after upload
-
-Upload status
-
-Remove button
-
-Add a notice:
-
-Your documents will only be used for verification purposes.
-
-Buttons:
-Back
-Continue
-
-For the prototype, uploaded files can be stored locally or represented using mock upload functionality.
-
-STEP 4 — REVIEW
-
-Show a summary of all information entered.
-
-Sections:
-
-Personal Information
-
-Show the driver's details.
-
-Vehicle Information
-
-Show vehicle details.
-
-Documents
-
-Show uploaded document names and verification status.
-
-Include an Edit button beside each section.
-
-Add checkbox:
-
-I confirm that the information I provided is accurate and complete.
-
-Button:
-
-Submit Application
-
-STEP 5 — SUCCESS
-
-After submission, show a professional success screen.
-
-Large success icon.
-
-Heading:
-
-Application Submitted!
-
-Message:
-
-Thank you for applying to become a TakeOFF driver. Our team will review your application and contact you once your verification is complete.
-
-Show:
-
-Application ID: TO-XXXXXX
-
-Buttons:
-
-Back to Home
-View Application Status
-
-PAGE 3 — DRIVER DASHBOARD
-
-Create a simple dashboard that appears after a driver has completed onboarding.
-
-Sidebar navigation:
-
-Dashboard
-
-My Profile
-
-Documents
-
-Application Status
-
-Earnings
-
-Help
-
-Logout
-
-Dashboard cards:
-
-Application Status
-Pending Verification
-
-Documents
-4/4 Submitted
-
-Profile
-Complete
-
-Earnings
-$0.00
-
-Include a status timeline:
-
-Application Submitted → Documents Reviewed → Approved → Ready to Drive
-
-PAGE 4 — HOW IT WORKS
-
-Create a simple page explaining:
-
-For Drivers
-
-Register
-
-Submit documents
-
-Get verified
-
-Start accepting rides and deliveries
-
-Earn
-
-For Customers
-
-Request a ride or delivery
-
-Get matched with a driver
-
-Track your trip
-
-Complete your journey
-
-PAGE 5 — ABOUT
-
-Create an About page explaining that TakeOFF connects customers with drivers for transportation and delivery services.
-
-Keep the copy concise and professional.
-
-Include sections:
-
-Our Mission
-
-What We Do
-
-Drivers
-
-Customers
-
-Community
-
-PAGE 6 — CONTACT
-
-Create a contact page with:
-
-Full Name
-
-Email
-
-Phone Number
-
-Message
-
-Button:
-Send Message
-
-Also show contact information cards for:
-
-Support
-
-Driver Support
-
-Business Enquiries
-
-FUNCTIONAL REQUIREMENTS
-
-Make the prototype interactive.
-
-The following must work:
-
-Navbar navigation
-
-React Router page navigation
-
-Become a Driver button opens onboarding
-
-Multi-step onboarding
-
-Next/Back buttons
-
-Form validation
-
-Progress indicator updates with each step
-
-Uploaded document names appear in the form
-
-Review page displays entered information
-
-Submit application displays success screen
-
-Dashboard can be opened after submission
-
-Responsive mobile navigation
-
-Buttons should have hover states
-
-Forms should have clear error messages
-
-Required fields should be validated
-
-Use mock/local state for now. Do not require a real backend.
-
-Important
-
-Do NOT copy TakeOFF's exact website code, proprietary assets, or copyrighted images.
-
-Create an original interface that is inspired by the concept of TakeOFF as a ride and delivery platform, while keeping the branding and UX suitable for a student prototype.
-
-Make the final website look polished enough for a portfolio/Uncommon student presentation.
-
-Before finishing, make sure there are no broken routes, console errors, or non-functional buttons.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+*African Unicorn TakeOFF Driver Onboarding — making driver registration more organized through technology.*
